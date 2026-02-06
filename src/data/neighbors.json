@@ -1,0 +1,30 @@
+{
+  "EMP": [
+    "ANL",
+    "KAN"
+  ],
+  "RAT": [
+    "KAN",
+    "ANL"
+  ],
+  "KAN": [
+    "RAT",
+    "ANL"
+  ],
+  "ANL": [
+    "EMP",
+    "KAN"
+  ],
+  "PHE": [
+    "GEN",
+    "KAN"
+  ],
+  "CRT": [
+    "GEN",
+    "KAN"
+  ],
+  "GEN": [
+    "PHE",
+    "CRT"
+  ]
+}

@@ -45,7 +45,6 @@ export default function Test() {
     if (page > 1) setPage(p => p-1)
   }
   function submit() {
-    // require all answered
     if (answeredCount < total) return
     localStorage.setItem('philo_answers_final', JSON.stringify(answers))
     nav('/result')
@@ -67,7 +66,7 @@ export default function Test() {
             {q.type === 'bipolar' ? (
               <>
                 <div className="q__title">{q.id}</div>
-                <div className="q__stem">当你遇到一个问题时，你更接近哪一边？</div>
+                <div className="q__stem">{q.prompt}</div>
                 <div className="q__choices">
                   <div className="q__choice q__choice--left">{q.a}</div>
                   <div className="q__choice q__choice--right">{q.b}</div>
@@ -75,8 +74,8 @@ export default function Test() {
                 <Likert7
                   value={answers[q.id] ?? null}
                   onChange={(v)=>setAns(q.id, v)}
-                  leftLabel="更接近A"
-                  rightLabel="更接近B"
+                  leftLabel={q.leftLabel ?? "更接近A"}
+                  rightLabel={q.rightLabel ?? "更接近B"}
                 />
               </>
             ) : (
